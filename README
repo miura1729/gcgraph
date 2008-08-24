@@ -9,6 +9,8 @@ GCGraph -- Graph Generator of GC inforamtion from GC::Profiler
    Graph is updated per 1 second. GCGraph uses technology like COMMET and 
    AJAX. But it is very poor, because GCGraph supposes only 1 client.
 
+   GCGraph need Ruby 1.9.0 and later including GC::Profiler module. 
+
 -- Install
 
   Copy lib/gcgraph.rb to directory in ruby libray path.
@@ -27,5 +29,10 @@ GCGraph -- Graph Generator of GC inforamtion from GC::Profiler
    Miura Hideki (miura1729)
    e-mail: m-72 at tf6.so-net.ne.jp
    blog:   http://d.hatena.ne.jp/miura1729 (in Japanese)
+
+-- License
+
+ under the Ruby's License
+
 
 
