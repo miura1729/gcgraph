@@ -1,0 +1,31 @@
+GCGraph -- Graph Generator of GC inforamtion from GC::Profiler
+
+-- Description
+
+   GCGraph generate graph of GC inforamtion from GC::Profiler. You can see the 
+   generated graph via Firefox. URL is "http://localhost:8088/graph".
+   You can use other browser have "<canvas>" tag. But I don't test.
+
+   Graph is updated per 1 second. GCGraph uses technology like COMMET and 
+   AJAX. But it is very poor, because GCGraph supposes only 1 client.
+
+-- Install
+
+  Copy lib/gcgraph.rb to directory in ruby libray path.
+   
+
+-- Usage
+
+  ruby -r gcgraph program.rb args ...
+
+-- Bugs
+
+  Many. I wish to fix the bug breaking console output by log 
+  of WEBBrick instantly.
+
+-- Author
+   Miura Hideki (miura1729)
+   e-mail: m-72 at tf6.so-net.ne.jp
+   blog:   http://d.hatena.ne.jp/miura1729 (in Japanese)
+
+
