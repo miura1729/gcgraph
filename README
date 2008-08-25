@@ -22,8 +22,7 @@ GCGraph -- Graph Generator of GC inforamtion from GC::Profiler
 
 -- Bugs
 
-  Many. I wish to fix the bug breaking console output by log 
-  of WEBBrick instantly.
+   Many.
 
 -- Author
    Miura Hideki (miura1729)

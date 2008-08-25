@@ -310,7 +310,7 @@ EOS
 
       def initialize(sv, opt)
         super
-        @graph_gen = opt
+        @graph_gen = @options[0]
       end
 
       def do_GET(req, res)
@@ -327,7 +327,7 @@ EOS
     class GraphServletSetScale<HTTPServlet::AbstractServlet
       def initialize(sv, opt)
         super
-        @graph_gen = opt
+        @graph_gen = @options[0]
       end
 
       def do_GET(req, res)
@@ -338,10 +338,20 @@ EOS
       end
     end
 
+    class DummyLog<BasicLog
+      def log(level, data)
+      end
+    end
+
     def initialize
+      # Create silent logger.
+      @log = DummyLog.new
+
       @graph_gen = GraphGenCanvas.new(600, 400)
-      @server = HTTPServer.new(:Port => 8088, :BindAddress => "localhost")
-      @server.logger.close
+      @server = HTTPServer.new(:Port => 8088, 
+                               :BindAddress => "localhost",
+                               :Logger => @log,
+                               :AccessLog => [])
       trap("INT"){@server.shutdown}
       @server.mount("/graph", GraphServlet)
       @server.mount("/update.js", GraphServlet2, @graph_gen)
